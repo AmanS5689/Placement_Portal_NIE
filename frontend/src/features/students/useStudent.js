@@ -9,7 +9,7 @@ export default function useStudent() {
     data: student,
     error,
   } = useQuery({
-    queryKey: ['allStudents', usn],
+    queryKey: ['studentData', usn],
     queryFn: () => getStudentDetails(usn),
     retry: 1,
     enabled: !!usn,

@@ -114,7 +114,6 @@ h6 {
 h3{
   font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 3.6rem;
   color: var(--color-grey-600);
 }`;
 

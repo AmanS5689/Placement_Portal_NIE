@@ -3,6 +3,7 @@ import { useState } from 'react';
 import CalendarNavigation from '@/features/events/CalendarNavigation';
 import CalendarView from '@/features/events/CalendarView';
 import AddEvent from '@/features/events/AddEvent';
+import { Button } from '@/components/ui/button';
 
 function Schedule() {
   const [activeTab, setActiveTab] = useState('calendar');
@@ -17,9 +18,8 @@ function Schedule() {
   };
 
   return (
-    <div className="min-w-[102.4rem] p-4">
-      {/* Header */}
-      <div className="header bg-[var(--color-grey-50)] p-4 flex justify-between items-center rounded-md">
+    <div className="min-w-[102.4rem]">
+      <div className="header bg-[var(--color-grey-50)] flex justify-between items-center rounded-md mb-[3.6rem]">
         <h1 className="text-[2.4rem] font-semibold text-[var(--color-grey-600)]">
           Schedule for Batch {selectedBatch}
         </h1>
@@ -44,26 +44,26 @@ function Schedule() {
 
       {/* Sub-tabs */}
       <div className="sub-tabs mt-4 flex gap-2">
-        <button
+        <Button
           onClick={() => setActiveTab('add')}
-          className={`py-2 px-4 rounded-md font-medium ${
+          className={`${
             activeTab === 'add'
-              ? 'bg-[var(--color-blue-600)] text-white'
-              : 'bg-[var(--color-grey-50)] text-[var(--color-grey-600)] hover:bg-[var(--color-grey-100)]'
+              ? 'bg-[var(--color-blue-600)] text-[var(--color-white)]'
+              : 'bg-[var(--color-grey-50)] text-[var(--color-grey-600)] hover:bg-[var(--color-white)] hover:text-[var(--color-blue-600)]'
           }`}
         >
           Add Event
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => setActiveTab('calendar')}
-          className={`py-2 px-4 rounded-md font-medium ${
+          className={`${
             activeTab === 'calendar'
               ? 'bg-[var(--color-blue-600)] text-white'
-              : 'bg-[var(--color-grey-50)] text-[var(--color-grey-600)] hover:bg-[var(--color-grey-100)]'
+              : 'bg-[var(--color-grey-50)] text-[var(--color-grey-600)] hover:bg-[var(--color-white)] hover:text-[var(--color-blue-600)]'
           }`}
         >
           Calendar View
-        </button>
+        </Button>
       </div>
 
       {/* Step 4: Pass currentDate to CalendarView */}

@@ -68,7 +68,7 @@ function AddOpportunity() {
 
   return (
     <div className="min-w-[102.4rem]">
-      <h3>Add a new opporunity</h3>
+      <h3 className="mb-[3.6rem]">Add a new opporunity</h3>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormRow label="Company" error={errors?.company?.message}>
           <Input

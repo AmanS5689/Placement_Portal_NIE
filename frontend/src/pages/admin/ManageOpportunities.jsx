@@ -19,7 +19,7 @@ function ManageOpportunities() {
   if (isLoading) return <Spinner />;
   return (
     <div className="min-w-[102.4rem]">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-[3.6rem]">
         <h3>Opportunities for the batch {batch}</h3>
         <Select onValueChange={(value) => setBatch(value)} defaultValue={batch}>
           <SelectTrigger className="w-[10rem]">
@@ -33,9 +33,11 @@ function ManageOpportunities() {
         </Select>
       </div>
       <OpportunityTable opportunities={opportunities} />
-      <Link to="add_new_opportunity">
-        <Button>Add new opportunity</Button>
-      </Link>
+      <div className="text-end">
+        <Link to="add_new_opportunity">
+          <Button>Add new opportunity</Button>
+        </Link>
+      </div>
     </div>
   );
 }

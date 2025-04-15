@@ -23,7 +23,7 @@ function StudentProfile() {
 
   return (
     <div className="min-w-[102.4rem]">
-      <h3>Profile details</h3>
+      <h3 className="mb-[3.6rem]">Profile details</h3>
       <Form>
         <p className="font-semibold mb-[2.4rem]">Personal details</p>
         <FormRow label="Fullname">

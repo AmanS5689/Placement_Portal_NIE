@@ -37,11 +37,11 @@ function CalendarNavigation({ currentDate, onDateChange }) {
   };
 
   return (
-    <div className="flex gap-2 mb-4">
+    <div className="flex gap-2 mb-4 text-[var(--color-grey-600)]">
       <select
         value={selectedMonth}
         onChange={handleMonthChange}
-        className="p-2 border border-[#AAAAAA] rounded-md bg-[#1A1A1A] text-[#FFFFFF]"
+        className="p-2 border rounded-md text-[var(--color-grey-600)]"
       >
         {months.map((month, index) => (
           <option key={index} value={index}>
@@ -52,7 +52,7 @@ function CalendarNavigation({ currentDate, onDateChange }) {
       <select
         value={selectedYear}
         onChange={handleYearChange}
-        className="p-2 border border-[#AAAAAA] rounded-md bg-[#1A1A1A] text-[#FFFFFF]"
+        className="p-2 border rounded-md"
       >
         {years.map((year) => (
           <option key={year} value={year}>
