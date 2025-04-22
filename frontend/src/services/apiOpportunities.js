@@ -64,8 +64,8 @@ export async function getOpportunity(id) {
 }
 
 export async function addNewOpportunity(opportunity) {
-  if (!opportunity) throw new Error('Opportunity can be empty!');
   try {
+    if (!opportunity) throw new Error("Opportunity can't be empty!");
     console.log(opportunity);
     const { role, token } = JSON.parse(Cookies.get('user'));
     if (!role) throw new Error('Unauthorized access not allowed!');

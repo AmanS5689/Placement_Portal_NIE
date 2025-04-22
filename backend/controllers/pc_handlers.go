@@ -186,7 +186,7 @@ func GetAllPlacementCoordinators(w http.ResponseWriter, r *http.Request, db *sql
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	defer db.Close()
+	// defer db.Close()
 
 	query := `
 		SELECT pc.usn, a.name, a.email, pc.branch, pc.batch, a.contact, a.created_at 
@@ -262,7 +262,7 @@ func DeletePlacementCoordinator(w http.ResponseWriter, r *http.Request, db *sql.
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	defer db.Close()
+	// defer db.Close()
 
 	var userID string
 	query := `SELECT user_id FROM placement_coordinators WHERE usn = $1`
@@ -352,7 +352,7 @@ func EditPlacementCoordinator(w http.ResponseWriter, r *http.Request, db *sql.DB
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	defer db.Close()
+	// defer db.Close()
 
 	// Begin transaction
 	tx, err := db.Begin()

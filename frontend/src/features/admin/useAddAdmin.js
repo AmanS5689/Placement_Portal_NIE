@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 export default function useAddAdmin() {
   return useMutation({
-    mutationFn: () => addAdmin(),
+    mutationFn: (adminData) => addAdmin(adminData),
     onSuccess: () => {
       toast.success('Admin added successfully!');
     },

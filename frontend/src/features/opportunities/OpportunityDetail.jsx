@@ -46,6 +46,7 @@ function OpportunityDetail() {
     // Submit logic here
     opportunityData.ctc = parseFloat(opportunityData.ctc);
     opportunityData.cgpa = parseFloat(opportunityData.cgpa);
+    opportunityData.backlog = parseFloat(opportunityData.backlog);
     opportunityData.class_10_percentage_criteria = parseFloat(
       opportunityData.class_10_percentage_criteria
     );
@@ -60,7 +61,6 @@ function OpportunityDetail() {
       opportunityData.allowed_genders =
         opportunityData.allowed_genders?.split(',');
     }
-
     updateOpportunity(
       { opportunityId, opportunityData, role },
       {
@@ -89,7 +89,7 @@ function OpportunityDetail() {
 
   return (
     <div>
-      <h3>Opportunity #{opportunity.id}</h3>
+      <h3 className="mb-[3.6rem]">Opportunity #{opportunity.id}</h3>
       <div className="shadow-lg">
         {/* Opportunity Header */}
         <div className="px-[3.2rem] py-[2.4rem] flex justify-between items-center bg-gradient-to-r from-[var(--color-brand-700)] to-[#6D12AF] text-[var(--color-white)]">

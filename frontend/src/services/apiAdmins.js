@@ -30,17 +30,21 @@ export async function getAllPC() {
   }
 }
 
-export async function addPC(pc) {
+export async function addPC(pcData) {
   try {
     const user = Cookies.get('user');
     const { token } = JSON.parse(user);
     // code
-    const response = await axios.post(`${API_URL}/placed-student/add`, pc, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.post(
+      `${API_URL}/placement-coordinator/add`,
+      pcData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     console.error('Failed to add placement coordinator:', error);
@@ -54,12 +58,13 @@ export async function addPC(pc) {
   }
 }
 
-export async function addAdmin() {
+export async function addAdmin(adminData) {
   try {
+    if (!adminData) throw new Error("Admin data can't be empty!");
     const user = Cookies.get('user');
     const { token } = JSON.parse(user);
     // code
-    const response = await axios.get(`${API_URL}/get-placed-students`, {
+    const response = await axios.post(`${API_URL}/admins/add`, adminData, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,

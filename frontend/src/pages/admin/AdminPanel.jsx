@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import AddAdminForm from '@/features/admin/AddAdminForm';
 import AddPCForm from '@/features/admin/AddPCForm';
+import PlacementCoordinatorsTable from '@/features/admin/PlacementCoordinatorsTable';
 
 function AdminPanel() {
   return (
@@ -14,6 +15,7 @@ function AdminPanel() {
           <AddAdminForm />
         </TabsContent>
         <TabsContent value="pc">
+          <PlacementCoordinatorsTable />
           <AddPCForm />
         </TabsContent>
       </Tabs>

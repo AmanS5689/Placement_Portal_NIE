@@ -1,6 +1,6 @@
 import { useDarkMode } from '@/context/DarkModeContext';
 import Logout from '@/features/authentication/Logout';
-import { HiMiniUser, HiSun, HiMoon } from 'react-icons/hi2';
+import { HiSun, HiMoon, HiBell } from 'react-icons/hi2';
 import { NavLink } from 'react-router-dom';
 
 function NavMenu() {
@@ -9,8 +9,8 @@ function NavMenu() {
   return (
     <ul className="flex items-center gap-12 text-[var(--color-blue-700)]">
       <li>
-        <NavLink to="profile">
-          <HiMiniUser size={'2.4rem'} />
+        <NavLink to="notifications">
+          <HiBell size={'2.4rem'} />
         </NavLink>
       </li>
       <li>
